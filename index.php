@@ -43,7 +43,7 @@ if(isset($_POST['add'])){
                 <input type="text" name="title" required><br><br>
                 <Label>Date:</Label>
                 <input type="date" name="date" required><br><br>
-                <Label>To Do:</Label>
+                <Label>Task:</Label>
                 <textarea name="todo" required></textarea><br><br>
                 <button type="submit" name="add">Add</button>
                 <button id="cancel">Cancel</button>
@@ -57,7 +57,7 @@ if(isset($_POST['add'])){
             <tr>
                 <th>Title</th>
                 <th>Date</th>
-                <th>To do</th>
+                <th>Task</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
@@ -73,30 +73,8 @@ if(isset($_POST['add'])){
                         <td><span><?php echo $rows['stats']?></td>
                         <td>
                             <a href="view.php?id= <?php echo $rows['id']?>">View</a>&nbsp;
-                            <button id="deleteBtn">Delete</button>
-                            <form action="delete.php" method="post">
-                                <div class="delete-modal" id="delete-modal">
-                                    <div class="delete-content">
-                                        <h3>Are you sure you want to delete this data?</h3>
-                                        <button type="submit" name="delete" id="erase">Delete</button>
-                                        <button name="cancel-del" id="cancel-del">Cancel</button>
-                                        <input type="hidden" name="del" value="<?php echo $rows['id']?>">
-                                    </div>
-                                </div>    
-                                <script>
-                                    var deleteBtn = document.getElementById("deleteBtn");
-                                    var cancelBtn = document.getElementById("cancel-del");
-                                    var deleteMod = document.getElementById("delete-modal");
+                            <a href="delete.php?id= <?php echo $rows['id']?>">Delete</a>
 
-                                    deleteBtn.onclick = function(){
-                                        deleteMod.style.display = "block";
-                                    }
-
-                                    cancelBtn.onclick = function(){
-                                        deleteMod.style.display = "none";
-                                    }
-                                </script>
-                            </form>
                         </td>
                     </tr>
                     <?php }
