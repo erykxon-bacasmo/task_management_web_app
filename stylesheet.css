@@ -1,0 +1,225 @@
+body {
+    font-family: arial;
+}
+.body {
+    background-color: burlywood;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Add Button CSS */
+.addBtn {
+    margin-inline-start: 10%;
+}
+
+/* data table Css */
+
+table {
+    border: 1px solid black;
+    text-align: center;
+    table-layout: fixed;
+}
+
+
+th {
+    font-size: 18px;
+}
+
+td.sorting_1 {
+    font-weight: bold;
+}
+
+table th, table td {
+    border-right: 1px solid white;
+    padding: 5px;
+    
+}
+
+td:nth-child(3) {
+    position: relative;
+}
+
+td:nth-child(3) span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+}
+
+/* delete button in data table */
+.delete-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.405);
+}
+
+.delete-content {
+    margin: 15% auto;
+    padding: 15px;
+    width: 30%;
+    height: 25%;
+    background-color: white;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.delete-content > button {
+    margin: 20px;
+}
+
+.delete-content > button:nth-child(2){
+    /* border: 1px solid red; */
+    background-color: rgb(243, 22, 22);
+    color: white;
+}
+
+/* Modifying bootstrap table */
+.dataTables_wrapper {
+    /* border: 1px solid red; */
+    margin: auto;
+    width: 95%;
+}
+
+/* th.sorting_desc::before, th.sorting_asc::before {
+    color: black;
+} */
+
+.dataTables_length, .dataTables_info, .dataTables_filter, ul.pagination  {
+    width: 80%;
+}
+
+.dataTables_length {
+    margin-inline-start: 20%;
+}
+
+.dataTables_info {
+    margin-inline-start: 28%;
+}
+
+
+
+
+/* Add pop-up modal css */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.405);
+}
+
+.add-content{
+    border-radius: 20px ;
+    margin: 3% auto;
+    width: 50%;
+    height: 30em;
+    background-color: white;
+    box-shadow: 2px 2px 2px gray;
+    /* overflow-y: scroll; */
+}
+
+h2 {
+    padding: 15px;
+    text-align: center;
+}
+
+.add-content > form > button {
+    /* border: 1px solid red; */
+    width: 15%;
+    margin-left: 22%;
+
+}
+
+.add-content > form > label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-inline-start: 20%;
+}
+
+.add-content > form > input, .add-content > form > textarea {
+    /* border: 1px solid red; */
+    display: flex;
+    margin-inline-start: 33%;
+    margin-top: -22px;
+    width: 40%;
+}
+
+/* view.php css */
+
+.view-modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.405);
+}
+.view-content{
+    margin: 3% auto;
+    padding: 10px;
+    width: 50%;
+    height: 35em;
+    background-color: white;
+    box-shadow: 2px 2px 2px gray;
+
+}
+
+.view-content > form > label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-inline-start: 20%;
+}
+
+/* .view-content> form > label .view-content > form > span, .view-content > form > textarea {
+    display: flex;
+    margin-inline-start: 33%;
+    width: 40%;
+    font-size: 18px;
+} */
+
+.view-content > form > span, .view-content > form > textarea {
+    /* border: 1px solid red; */
+    display: flex;
+    margin-top: -27px;
+    margin-inline-start: 33%;
+    width: 40%;
+    font-size: 18px;
+}
+
+.view-content > form > a{
+    /* border: 1px solid red; */
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+/* footer */
+footer {
+    /* border: 1px solid yellow; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
