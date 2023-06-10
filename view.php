@@ -11,10 +11,35 @@ $sql = "SELECT * FROM task_data WHERE id = '$id'";
 $list = $conn->query($sql);
 $rows = $list->fetch_assoc();
 
-// function for clicking button mark as done
-if(isset($_POST['mark'])){
+// function for clicking button complete
+if(isset($_POST['check'])){
+    $status = $_POST['stats'];
+    
+    if ($status == 'Completed'){ 
+    ?>
+        <script>
+            alert("Already Completed");
+            window.location= "index.php";
+        </script>
+    <?php }
 
 }
+
+// other function for clicking button
+if(isset($_POST['complete'])){
+    $id = $_POST['check'];
+
+    $sql = "UPDATE task_data SET stats = 'Completed' WHERE id = '$id'";
+    $result = $conn->query($sql);
+    
+    echo "<script>alert('Your Task Completed!')</script>";
+    echo "<script>window.location='index.php'</script>";
+}
+
+// close
+if(isset($_POST['close'])) {
+    header("location: index.php");
+}  
 
 ?>
 <!DOCTYPE html>
@@ -41,12 +66,15 @@ if(isset($_POST['mark'])){
                 <span><?php echo $rows['title']?></span><br><br>
                 <Label>Date:</Label>
                 <span><?php echo $rows['date']?></span><br><br>
-                <Label>To Do:</Label>
+                <Label>Task:</Label>
                 <textarea  readonly><?php echo $rows['todo']?></textarea><br><br>
                 <Label>Status:</Label>
-                <span><?php echo $rows['stats']?></span><br><br>
-                <a href="status.php?id= <?php echo $rows['id']?>">Mark as Done</a>&nbsp; &nbsp;
-                <a href="index.php">Close</a>
+                <input type="text" name="stats" value="<?php echo $rows['stats']?>" readonly><br><br>
+                <button type="submit" name="complete">Complete</button>
+                <input type="hidden" name="check" value="<?php echo $rows['id']?>">
+                <button type="submit" name="close">Close</button>
+                <!-- <a href="status.php?id= <?php echo $rows['id']?>" id="mark">Mark as Done</a>&nbsp; &nbsp;
+                <a href="index.php">Close</a> -->
             </form>
         </div>
     </div>   
@@ -72,7 +100,7 @@ if(isset($_POST['mark'])){
                         <td>
                             <form action="delete.php" method="post">
                                 <a href="view.php?id= <?php echo $rows['id']?>">View</a>&nbsp;    
-                                <button type="submit" name="delete" id="erase">Delete</button>
+                                <a href="">Delete</a>
                             </form>
                         </td>
                     </tr>
