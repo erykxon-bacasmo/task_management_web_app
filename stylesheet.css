@@ -160,6 +160,8 @@ h2 {
     width: 40%;
 }
 
+
+
 /* view.php css */
 
 .view-modal {
@@ -205,9 +207,11 @@ h2 {
 }
 
 .view-content > form > a{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     text-decoration: none;
     color: black;
+    margin-inline-start: 25%;
+    width: 15%;
 }
 
 
