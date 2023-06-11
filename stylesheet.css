@@ -257,7 +257,7 @@ h2 {
     height: 35em;
     background-color: white;
     box-shadow: 2px 2px 2px gray;
-
+    overflow: hidden;
 }
 
 .view-content > form > label {
