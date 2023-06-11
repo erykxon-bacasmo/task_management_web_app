@@ -36,14 +36,17 @@ if(isset($_POST['cancel-del'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Management</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 
 </head>
 <body class="body">
-    <h1>Task Management Web Application</h1><br><br>
-    <button class="addBtn">Add Task</button><br><br>
+    <h1 class="title">Task Management Web Application</h1><br><br>
+    <button class="addBtn"><i class="fa fa-plus"></i> Add Task </button>&nbsp;&nbsp;
+    <a href="export.php" type="button" class="expBtn"><i class="fa fa-file-export"></i> Export Data </a>&nbsp;
+
+    <!-- delete form -->
     <form action="" method="post">
         <div class="delete-modal" id="delete-modal">
             <div class="delete-content">
@@ -73,11 +76,11 @@ if(isset($_POST['cancel-del'])){
                         <td><span><?php echo $rows['title']?></span></td>
                         <td><span><?php echo $rows['date']?></span></td>
                         <td><span><?php echo $rows['todo']?></span></td>
-                        <td></td>
+                        <td><span><?php echo $rows['stats']?></span></td>
                         <td>
                             <form action="delete.php" method="post">
-                                <a href="">View</a>&nbsp;    
-                                <a href="">Delete</a>
+                                <a href=""><i class="fa fa-eye"></i>View</a>&nbsp;
+                                <a href=""><i class="fa fa-trash"></i>Delete</a>
                             </form>
                         </td>
                     </tr>
@@ -87,15 +90,19 @@ if(isset($_POST['cancel-del'])){
                 <?php }
                 ?>
         </tbody>
-    </table>
-
-           
-    <footer>
-        <h4>By: Erykxon Bacasmo</h4>
-    </footer>
+    </table><br><br>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="script.js"></script>
 </body>
+    <footer>
+        <h4>By: Erykxon Bacasmo</h4>
+        <div class="contact">
+            <h5>For More Info:</h5>
+            <a href="https://erykxon-bacasmo.github.io/my_Portfolio/"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;My Webpage</a>&nbsp; &nbsp;
+            <p><i class="fa-solid fa-phone"></i>&nbsp;09663750139</p>        
+        </div>
+    </footer>
 </html>

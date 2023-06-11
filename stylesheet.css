@@ -5,9 +5,16 @@ body {
     background-color: burlywood;
 }
 
-h1 {
+.title {
+    /* border: 1px solid green; */
+    position: relative;
+    padding-top: 30px;
     text-align: center;
     color: black;
+    font-weight: bolder;
+    font-family: Tahoma;
+    letter-spacing: 2px;
+    text-shadow: 3px 2px rgb(233, 224, 224);
 }
 
 button {
@@ -21,15 +28,32 @@ button:hover {
 
 /* Add Button CSS */
 .addBtn {
-    margin-inline-start: 10%;
+    margin-inline-start: 12%;
     box-shadow: 2px 2px 2px rgb(56, 56, 56);
     padding: 4px;
     font-weight: bold;
     background-color: #0D6EFD;
 }
 
+
+/* Export Button CSS */
+.expBtn {
+    box-shadow: 2px 2px 2px rgb(56, 56, 56);
+    padding: 4px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 22, 22);
+}
+
+.expBtn:hover {
+    color: white;
+}
+
+
 /* data table Css */
-table {
+.table {
     /* border: 1px solid black; */
     box-shadow: 2px 2px 2px gray;
     text-align: center;
@@ -69,8 +93,9 @@ td a {
     text-decoration: none;
     color: black;
     box-shadow: 2px 2px 2px rgb(56, 56, 56);
-    padding: 4px;
+    padding: 3px;
     font-weight: bold;
+    font-size: 15px;
     text-align: center;
     background-color: #0D6EFD;
 }
@@ -98,7 +123,7 @@ td a:hover{
 }
 
 .delete-content {
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 15% auto;
     padding: 15px;
     width: 35%;
@@ -127,17 +152,19 @@ td a:hover{
 
 /* Modifying bootstrap table */
 .dataTables_wrapper {
-    /* border: 1px solid red; */
+    margin-block-start: -100%;
     margin: auto;
     width: 95%;
 }
 
 .dataTables_length, .dataTables_info, .dataTables_filter, ul.pagination  {
     width: 80%;
+    color: black;
+    font-weight: bold;
 }
 
 .dataTables_length {
-    margin-inline-start: 20%;
+    display: none;
 }
 
 .dataTables_info {
@@ -198,10 +225,14 @@ h2 {
 
 .add-content > form > input, .add-content > form > textarea {
     /* border: 1px solid red; */
+    border: 0.5px solid black;
     display: flex;
     margin-inline-start: 33%;
     margin-top: -22px;
     width: 40%;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.098);
 }
 
 
@@ -226,7 +257,6 @@ h2 {
     height: 35em;
     background-color: white;
     box-shadow: 2px 2px 2px gray;
-    overflow: scroll;
 
 }
 
@@ -265,15 +295,35 @@ h2 {
     background-color: rgb(0, 198, 89);
 }
 
-
-
 /* footer */
 footer {
     /* border: 1px solid yellow; */
-    position: absolute;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
     bottom: 0;
     left: 0;
-    width: 100%;
-    opacity: 70%;
+    padding: 10px;
     text-align: center;
+    background-color: burlywood;
+}
+
+footer > h4{
+    /* border: 1px solid white; */
+    margin-inline-start: 20%;
+}
+footer > .contact {
+    margin-inline-end: 20%;
+}
+
+.contact > a, .contact > p {
+    display: inline;
+    text-decoration: none;
+    color: black;
+}
+
+.contact > a:hover {
+    color: white;
 }

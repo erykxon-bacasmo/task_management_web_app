@@ -1,6 +1,14 @@
 $(document).ready(function () {
-    $('#example').DataTable();
+    $('#example').DataTable({
+        lengthMenu: [
+            [5, 10, -1],
+            [5, 10, 'All'],
+        ],
+        pagingType: 'simple'
+    });
 });
+
+
 
 // add popup modal function 
 var addBtn = document.getElementById("addBtn-modal");
