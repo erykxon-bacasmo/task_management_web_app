@@ -15,7 +15,7 @@ if(isset($_POST['add'])){
     $conn->query($sql);
     
     // header("location: index.php");
-    echo"<script>alert('Add Successfully')</script>";
+    // echo"<script>alert('Add Successfully')</script>";
     echo"<script>window.location='index.php'</script>";
 
 }
@@ -49,7 +49,7 @@ if(isset($_POST['add'])){
                 <input type="date" name="date" required><br><br>
                 <Label>Task:</Label>
                 <textarea name="todo" required></textarea><br><br>
-                <button type="submit" name="add"><i class="fa fa-plus"></i> Add </button>
+                <button type="submit" name="add" id="addBtn"><i class="fa fa-plus"></i> Add </button>
                 <button id="cancel">Cancel</button>
             </form>
         </div>
@@ -87,6 +87,13 @@ if(isset($_POST['add'])){
                 ?>
         </tbody>
     </table><br><br>
+    <script>
+        var addBtn = document.getElementById("addBtn");
+
+        addBtn.onclick =function(){
+            swal("Good job!", "You clicked the button!", "success");
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>    
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
