@@ -14,8 +14,7 @@ if(isset($_POST['add'])){
     $sql = "INSERT INTO task_data(`title`, `date`, `todo`, `stats`) VALUES('$title', '$date', '$todo', 'Not Complete')";
     $conn->query($sql);
     
-    // header("location: index.php");
-    // echo"<script>alert('Add Successfully')</script>";
+
     echo"<script>window.location='index.php'</script>";
 
 }
